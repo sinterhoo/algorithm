@@ -16,10 +16,11 @@ for i in range(n+1):
             answer[i][j] = 0
             continue
         if j >= bags[i-1][0]:
-            if j-bags[i-1][0] >=0:
-                answer[i][j] = max(answer[i-1][j], answer[i][j-bags[i-1][0]] + bags[i-1][1])
+            if answer[i-1][j - bags[i-1][0]] + bags[i-1][1] > answer[i-1][j]:
+                answer[i][j] = answer[i-1][j - bags[i-1][0]] + bags[i-1][1]
             else:
-                answer[i][j] = max(answer[i-1][j], bags[i-1][1])
+                answer[i][j] = answer[i-1][j]
+        else:
+            answer[i][j] = answer[i-1][j]
 
-
-print(answer[i][j])
+print(answer[n][k])
