@@ -1,5 +1,3 @@
-import math
-
 al = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 n = int(input())
@@ -12,4 +10,4 @@ for i in s:
     answer += (temp)
     count +=1
 
-print(int(answer%123456789))
+print(int(answer%1234567891))
